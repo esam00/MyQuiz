@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleTextSize">35sp</dimen>
+    <dimen name="subtitleTextSize">20sp</dimen>
+    <dimen name="mainText">18sp</dimen>
+    <dimen name="secondaryText">17sp</dimen>
+    <dimen name="margin">0dp</dimen>
+    <dimen name="viewMargin">15dp</dimen>
+
+</resources>

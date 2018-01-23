@@ -1,0 +1,81 @@
+<resources>
+
+    <string name="app_name">MyQuiz</string>
+    <string name="Ready">Ready?</string>
+    <string name="name">Enter your name</string>
+    <string name="answer">Put your answer here </string>
+    <string name="Share">Share</string>
+    <string name="description">Welcome to the personal analysis quiz</string>
+    <string name="subtitle">What you see in these images will reveal your strongest characteristic. Will it be wisdom, courage, passion, honesty, kindness, or intuition?</string>
+
+    <!-- Questions -->
+
+    <string name="question1">1. Which color stands out to you most?</string>
+    <string name="question2">2. How does this image make you feel?</string>
+    <string name="question3">3. What do you see in this picture?</string>
+    <string name="question4">4. What stands out to you the most in this image?</string>
+    <string name="question5">5. Which of these words would you pick to describe this image?</string>
+    <string name="question6">6. What do you see in this picture?</string>
+    <string name="question7">7. Which of these words would you pick to describe this image?</string>
+    <string name="question8">8. What do you see in this picture?</string>
+    <string name="question9">9. What percent this image make you feel sad?</string>
+    <string name="question10">10 .what does this image make you feel? </string>
+
+    <!-- radio Button choices. -->
+
+    <string name="Q1R1">Blue</string>
+    <string name="Q1R2">Yellow</string>
+    <string name="Q1R3">Red</string>
+
+    <string name="Q2R1">Natural</string>
+    <string name="Q2R2">Confused</string>
+    <string name="Q2R3">Curious</string>
+
+    <string name="Q3R1">Mountains</string>
+    <string name="Q3R2">Desert</string>
+    <string name="Q3R3">Lava</string>
+
+    <string name="Q4R1">The faces</string>
+    <string name="Q4R2">The dog</string>
+    <string name="Q4R3">The zero </string>
+
+    <string name="Q5R1">White</string>
+    <string name="Q5R2">Whipped cream</string>
+    <string name="Q5R3">Smoke</string>
+
+    <string name="Q6R1">Fire</string>
+    <string name="Q6R2">Suns</string>
+    <string name="Q6R3">spheres</string>
+
+    <string name="Q7R1">Cells</string>
+    <string name="Q7R2">Circles</string>
+    <string name="Q7R3">Brown</string>
+
+    <string name="Q8R1">Light</string>
+    <string name="Q8R2">Electric</string>
+    <string name="Q8R3">Hair</string>
+
+    <string name="Q9R1">Blue</string>
+    <string name="Q9R2">Yellow</string>
+    <string name="Q9R3">Red</string>
+
+    <string name="Q10R1">Blue</string>
+    <string name="Q10R2">Yellow</string>
+    <string name="Q10R3">Red</string>
+
+    <!--  Buttons  -->
+
+    <string name="Add">+</string>
+    <string name="sub">-</string>
+    <string name="percent">50%</string>
+    <string name="reset">Play Again</string>
+    <string name="result">Result</string>
+
+    <!-- Quotations -->
+
+    <string name="quotation1">Your answers reveal that honesty is your most dominant personality trait.   You call it like you see it.  Others count on you for thoughtful and candid feedback. You are also very self-aware and know your own limits.  Being honest with yourself can be tricky, but you make it look easy. </string>
+    <string name="quotation2">Your answers reveal that courage is your most dominant personality trait.  You never waver in the face of a challenge.  People often look to you for your leadership ability. You may feel fear, but you never show it! </string>
+    <string name="quotation3">Your answers reveal that wisdom is your most dominant personality trait.  You approach situations and challenges with a level head and use logic when making decisions.  Your many experiences in life have made you an intelligent and practical individual.  </string>
+
+
+</resources>
