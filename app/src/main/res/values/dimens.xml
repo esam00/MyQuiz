@@ -4,6 +4,10 @@
     <dimen name="subtitleTextSize">20sp</dimen>
     <dimen name="mainText">18sp</dimen>
     <dimen name="secondaryText">17sp</dimen>
+
+    <dimen name="introPadding">40dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="viewHeight">2dp</dimen>
     <dimen name="margin">0dp</dimen>
     <dimen name="viewMargin">15dp</dimen>
 

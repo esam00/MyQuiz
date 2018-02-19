@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">MyQuiz</string>
-    <string name="Ready">Ready?</string>
+
     <string name="name">Enter your name</string>
     <string name="answer">Put your answer here </string>
     <string name="Share">Share</string>

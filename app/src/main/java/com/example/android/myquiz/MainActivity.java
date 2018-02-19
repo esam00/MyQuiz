@@ -11,10 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     int points=0 ;
     int percent=50 ;
-    boolean allAnswered = true;
+    boolean allAnswered = true; // to check if all questions have been answered
 
     boolean blue , yellow , red , natural , confused , curious,mountain , desert , lava ;
     boolean faces , dog , zero , white, cream , smoke , fire , sun , sphere ,cells , circles , brown ,light, electric, hair ;
@@ -22,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     String quotation;
     String lastShowing;
 
-
+    /**
+     saving and restoring data when rotation
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -43,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
         displayPercent(percent);
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
     }
 
@@ -54,34 +57,38 @@ public class MainActivity extends AppCompatActivity {
      * method to show the result when Result button is clicked
      */
     public void showQuizResult (View view) {
-        points = countPoints();
+        points = countPoints(); // giving every answer a number:  1 ,2 or 3 then get back the count of all numbers
 
         if (!allAnswered){
             Toast.makeText(this, "please answer all questions!", Toast.LENGTH_SHORT).show();
             return;
-
         }
 
             EditText playerName = findViewById(R.id.name);
             String name = playerName.getText().toString();
+            String empty ="";
+            if (name.equals(empty)){
+                Toast.makeText(this, "please Enter your name!", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             quotation = getQuotation(points);
-            // the string variable that receives the last result to be send to second activity
+
+            // the string variable that receives the last result to be send to the result  activity
             lastShowing = lastQuot(name, quotation);
 
+            // send all information to the result activity
             Intent intent = new Intent(this, Main2Activity.class);
             intent.putExtra("result", lastShowing);
             startActivity(intent);
 
     }
 
-
-
     /**
-     * method to give a unique number to the points variable
+     * method that counts the total number of points
      */
     public int countPoints (){
-        int degree =0;
+        int count =0;
 
         RadioButton Q1R1 = findViewById(R.id.Q1R1);
         blue = Q1R1.isChecked();
@@ -139,27 +146,26 @@ public class MainActivity extends AppCompatActivity {
         RadioButton Q8R3 = findViewById(R.id.Q8R3);
         hair = Q8R3.isChecked();
 
+        count += getPoints(blue,yellow,red);
+        count += getPoints(natural,confused,curious);
+        count += getPoints(mountain,desert,lava);
+        count += getPoints(faces,dog,zero);
+        count += getPoints(white,cream,smoke);
+        count += getPoints(fire,sun,sphere);
+        count += getPoints(cells,circles,brown);
+        count += getPoints(light,electric,hair);
 
-
-        degree += getPoints(blue,yellow,red);
-        degree += getPoints(natural,confused,curious);
-        degree += getPoints(mountain,desert,lava);
-        degree += getPoints(faces,dog,zero);
-        degree += getPoints(white,cream,smoke);
-        degree += getPoints(fire,sun,sphere);
-        degree += getPoints(cells,circles,brown);
-        degree += getPoints(light,electric,hair);
-
-
-        return degree;
-
+        return count;
     }
 
+    /**
+     * method to give a number for each solution
+     */
     public int getPoints (boolean x , boolean y , boolean z){
         int degree=0 ;
-        if (!x && !y&& !z) {
-            allAnswered = false;
 
+        if (!x && !y&& !z) { // user skipped that question !
+            allAnswered = false;
         }
                 if (x){
                     degree=3;
@@ -174,10 +180,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                  return degree;
     }
-
-
-
-
 
     /**
      * method to give a quotation depending on the given number of points
@@ -200,14 +202,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * method to summary the last output to the user
      */
-
     private String lastQuot (String name , String quot ){
         String text = "Hello "+name ;
         text+="\n"+quot;
         return text;
     }
-
-
 
     /**
      * method To Add 10 %
@@ -219,12 +218,10 @@ public class MainActivity extends AppCompatActivity {
         }
         percent+=10;
         displayPercent(percent);
-
-
     }
 
     /**
-     * method To Add 10 %
+     * method To sub 10 %
      */
     public void subPercent (View view){
         if (percent==0){
@@ -233,18 +230,14 @@ public class MainActivity extends AppCompatActivity {
         }
         percent-=10;
         displayPercent(percent);
-
-
     }
 
-
     /**
-     * method to display the result
+     * method to display percent
      */
     public void displayPercent (int percent){
         TextView Result = findViewById(R.id.percent);
         Result.setText(String.valueOf(percent)+"%");
     }
-
 
 }

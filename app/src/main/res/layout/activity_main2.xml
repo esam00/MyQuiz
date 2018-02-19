@@ -10,14 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="@dimen/viewMargin"
             android:background="@color/view"
             android:layout_marginTop="45dp"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/viewHeight"
             android:background="@color/view"
             android:layout_margin="@dimen/viewMargin"/>
         <TextView
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorBackground"
             android:fontFamily="casual"
-            android:padding="40dp"
+            android:padding="@dimen/introPadding"
             android:textColor="@color/colorPrimaryText"
             android:textSize="17sp" />
         <View
@@ -36,7 +37,7 @@
             android:layout_margin="@dimen/viewMargin"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="@dimen/viewMargin"
             android:background="@color/view"
             android:layout_marginBottom="20dp"/>
         <LinearLayout
@@ -61,7 +62,6 @@
                 android:onClick="composeEmail"
                 />
         </LinearLayout>
-
 
     </LinearLayout>
 
