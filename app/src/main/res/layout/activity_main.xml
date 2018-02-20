@@ -350,7 +350,6 @@
                 android:text="@string/Q5R1"
                 android:textColor="@color/colorSecondaryText"
                 android:textSize="@dimen/secondaryText"
-
                 />
 
             <RadioButton
@@ -445,75 +444,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img7" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin"
-            android:text="@string/question7"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="@dimen/mainText" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="@dimen/viewMargin"
-            android:background="@color/view" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin10dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/Q7R1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Q7R1"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/secondaryText"
-                />
-
-            <RadioButton
-                android:id="@+id/Q7R2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Q7R2"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/secondaryText" />
-
-            <RadioButton
-                android:id="@+id/Q7R3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Q7R3"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/secondaryText"
-                />
-        </RadioGroup>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/margin10dp"
-            android:background="@color/view" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin10dp"
-            android:scaleType="centerCrop"
             android:src="@drawable/img8" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin"
-            android:text="@string/question8"
+            android:text="@string/question7"
             android:textColor="@color/colorPrimaryText"
             android:textSize="@dimen/mainText" />
 
@@ -530,7 +467,7 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/Q8R1"
+                android:id="@+id/Q7R1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -540,7 +477,7 @@
                 />
 
             <RadioButton
-                android:id="@+id/Q8R2"
+                android:id="@+id/Q7R2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -549,7 +486,7 @@
                 android:textSize="@dimen/secondaryText" />
 
             <RadioButton
-                android:id="@+id/Q8R3"
+                android:id="@+id/Q7R3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -558,6 +495,67 @@
                 android:textSize="@dimen/secondaryText"
                 />
         </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin10dp"
+            android:background="@color/view" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img7" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:text="@string/question8"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/mainText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="@dimen/viewMargin"
+            android:background="@color/view" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/Q8C1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Q7R1"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/secondaryText"
+                />
+
+            <CheckBox
+                android:id="@+id/Q8C2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Q7R2"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/secondaryText" />
+
+            <CheckBox
+                android:id="@+id/Q8C3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Q7R3"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/secondaryText"
+                />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -605,6 +603,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/percent"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/secondaryText" />
+            <TextView
+                android:id="@+id/per"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:text="%"
                 android:textColor="@color/colorSecondaryText"
                 android:textSize="@dimen/secondaryText" />
 

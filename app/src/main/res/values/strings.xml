@@ -16,11 +16,10 @@
     <string name="question4">4. What stands out to you the most in this image?</string>
     <string name="question5">5. Which of these words would you pick to describe this image?</string>
     <string name="question6">6. What do you see in this picture?</string>
-    <string name="question7">7. Which of these words would you pick to describe this image?</string>
-    <string name="question8">8. What do you see in this picture?</string>
+    <string name="question7">7. What do you see in this picture?</string>
+    <string name="question8">8.Which of these words would you pick to describe this image? </string>
     <string name="question9">9. What percent this image make you feel sad?</string>
-    <string name="question10">10 .what does this image make you feel? </string>
-
+    <string name="question10">10. what does this image make you feel? </string>
     <!-- radio Button choices. -->
 
     <string name="Q1R1">Blue</string>
@@ -67,7 +66,7 @@
 
     <string name="Add">+</string>
     <string name="sub">-</string>
-    <string name="percent">50%</string>
+    <string name="percent">50</string>
     <string name="reset">Play Again</string>
     <string name="result">Result</string>
 

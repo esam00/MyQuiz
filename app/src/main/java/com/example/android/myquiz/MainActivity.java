@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     int points=0 ;
     int percent=50 ;
-    boolean allAnswered = true; // to check if all questions have been answered
+    boolean allAnswered ; // to check if all questions have been answered
 
     boolean blue , yellow , red , natural , confused , curious,mountain , desert , lava ;
     boolean faces , dog , zero , white, cream , smoke , fire , sun , sphere ,cells , circles , brown ,light, electric, hair ;
@@ -42,15 +43,12 @@ public class MainActivity extends AppCompatActivity {
         percent = savedInstanceState.getInt("sav3");
 
         displayPercent(percent);
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
     /**
@@ -81,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Main2Activity.class);
             intent.putExtra("result", lastShowing);
             startActivity(intent);
-
     }
 
     /**
@@ -133,18 +130,18 @@ public class MainActivity extends AppCompatActivity {
         sphere = Q6R3.isChecked();
 
         RadioButton Q7R1 = findViewById(R.id.Q7R1);
-        cells= Q7R1.isChecked();
+        light = Q7R1.isChecked();
         RadioButton Q7R2 = findViewById(R.id.Q7R2);
-        circles = Q7R2.isChecked();
+        electric = Q7R2.isChecked();
         RadioButton Q7R3 = findViewById(R.id.Q7R3);
-        brown = Q7R3.isChecked();
+        hair = Q7R3.isChecked();
 
-        RadioButton Q8R1 = findViewById(R.id.Q8R1);
-        light = Q8R1.isChecked();
-        RadioButton Q8R2 = findViewById(R.id.Q8R2);
-        electric = Q8R2.isChecked();
-        RadioButton Q8R3 = findViewById(R.id.Q8R3);
-        hair = Q8R3.isChecked();
+        CheckBox Q8C1 = findViewById(R.id.Q8C1);
+        cells= Q8C1.isChecked();
+        CheckBox Q8C2 = findViewById(R.id.Q8C2);
+        circles = Q8C2.isChecked();
+        CheckBox Q8C3 = findViewById(R.id.Q8C3);
+        brown = Q8C3.isChecked();
 
         count += getPoints(blue,yellow,red);
         count += getPoints(natural,confused,curious);
@@ -152,14 +149,15 @@ public class MainActivity extends AppCompatActivity {
         count += getPoints(faces,dog,zero);
         count += getPoints(white,cream,smoke);
         count += getPoints(fire,sun,sphere);
-        count += getPoints(cells,circles,brown);
         count += getPoints(light,electric,hair);
+        count += getPointsForCheckBox(cells,circles,brown);
+        count += getPointsForPercent(percent);
 
         return count;
     }
 
     /**
-     * method to give a number for each solution
+     * method to give a number for each solution (Radio button questions )
      */
     public int getPoints (boolean x , boolean y , boolean z){
         int degree=0 ;
@@ -179,6 +177,46 @@ public class MainActivity extends AppCompatActivity {
                     allAnswered = true;
                 }
                  return degree;
+    }
+
+    /**
+     * method to give a number for each checkbox question 8
+     */
+    public int getPointsForCheckBox (boolean x , boolean y , boolean z){
+        int degree=0 ;
+
+        if (!x && !y && !z) { // user skipped that question !
+            allAnswered = false;
+        }
+        if (x){
+            degree+=1;
+            allAnswered = true;
+        }
+        if (y){
+            degree +=1 ;
+            allAnswered = true;
+        }
+
+        if(z) {
+            degree += 1;
+            allAnswered = true;
+        }
+        return degree;
+    }
+
+    /**
+     * method to give a number to specific range question 9
+     */
+    public int getPointsForPercent (int percent){
+        int degree ;
+        if(percent <30){
+            degree=1;
+        }else if ( percent>=30 && percent <65){
+            degree =2 ;
+        }else {
+            degree =3 ;
+        }
+        return degree;
     }
 
     /**
@@ -203,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
      * method to summary the last output to the user
      */
     private String lastQuot (String name , String quot ){
-        String text = "Hello "+name ;
+        String text = "Hi "+name+" ^_^" ;
         text+="\n"+quot;
         return text;
     }
@@ -237,7 +275,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayPercent (int percent){
         TextView Result = findViewById(R.id.percent);
-        Result.setText(String.valueOf(percent)+"%");
+        Result.setText(String.valueOf(percent));
     }
-
 }
