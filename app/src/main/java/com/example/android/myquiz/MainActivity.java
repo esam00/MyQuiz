@@ -12,9 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int points=0 ;
+    int points;
     int percent=50 ;
     boolean allAnswered ; // to check if all questions have been answered
+    boolean restricted ; // to check if the user has commit to a specific answer for question10
 
     boolean blue , yellow , red , natural , confused , curious,mountain , desert , lava ;
     boolean faces , dog , zero , white, cream , smoke , fire , sun , sphere ,cells , circles , brown ,light, electric, hair ;
@@ -61,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "please answer all questions!", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!restricted){
+            Toast.makeText(this, "Yes Or No are the only allowed answers for question 10 ", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
             EditText playerName = findViewById(R.id.name);
             String name = playerName.getText().toString();
@@ -75,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
             // the string variable that receives the last result to be send to the result  activity
             lastShowing = lastQuot(name, quotation);
 
-            // send all information to the result activity
+        Toast.makeText(this, ""+lastShowing, Toast.LENGTH_LONG).show();
+
+        // send all information to the result activity
             Intent intent = new Intent(this, Main2Activity.class);
             intent.putExtra("result", lastShowing);
             startActivity(intent);
@@ -143,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
         CheckBox Q8C3 = findViewById(R.id.Q8C3);
         brown = Q8C3.isChecked();
 
+        EditText Q10 = findViewById(R.id.question10);
+        String question10 = Q10.getText().toString();
+
         count += getPoints(blue,yellow,red);
         count += getPoints(natural,confused,curious);
         count += getPoints(mountain,desert,lava);
@@ -152,12 +162,13 @@ public class MainActivity extends AppCompatActivity {
         count += getPoints(light,electric,hair);
         count += getPointsForCheckBox(cells,circles,brown);
         count += getPointsForPercent(percent);
+        count += getPointsForQuestion10(question10);
 
         return count;
     }
 
     /**
-     * method to give a number for each solution (Radio button questions )
+     * method to give a number for each solution (Radio button questions 1:7)
      */
     public int getPoints (boolean x , boolean y , boolean z){
         int degree=0 ;
@@ -188,18 +199,8 @@ public class MainActivity extends AppCompatActivity {
         if (!x && !y && !z) { // user skipped that question !
             allAnswered = false;
         }
-        if (x){
-            degree+=1;
-            allAnswered = true;
-        }
-        if (y){
-            degree +=1 ;
-            allAnswered = true;
-        }
-
-        if(z) {
-            degree += 1;
-            allAnswered = true;
+        if (!x && y && !z) {
+            degree =2;
         }
         return degree;
     }
@@ -217,6 +218,26 @@ public class MainActivity extends AppCompatActivity {
             degree =3 ;
         }
         return degree;
+    }
+
+    /**
+     * method to give a number to specific answer question 10
+     */
+    public int getPointsForQuestion10 (String answer ){
+        int degree=0 ;
+        if (answer.equals("")){
+            allAnswered=false;
+        }
+        if (answer.equals("Yes")) {
+            degree =1;
+            restricted=true;
+        }else if (answer.equals("No")) {
+            degree =0;
+            restricted=true;
+        }else{
+            restricted=false;
+        }
+            return degree;
     }
 
     /**

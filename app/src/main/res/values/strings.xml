@@ -3,7 +3,7 @@
     <string name="app_name">MyQuiz</string>
 
     <string name="name">Enter your name</string>
-    <string name="answer">Put your answer here </string>
+    <string name="answer">Yes OR No  </string>
     <string name="Share">Share</string>
     <string name="description">Welcome to the personal analysis quiz</string>
     <string name="subtitle">What you see in these images will reveal your strongest characteristic. Will it be wisdom, courage, passion, honesty, kindness, or intuition?</string>
@@ -19,7 +19,7 @@
     <string name="question7">7. What do you see in this picture?</string>
     <string name="question8">8.Which of these words would you pick to describe this image? </string>
     <string name="question9">9. What percent this image make you feel sad?</string>
-    <string name="question10">10. what does this image make you feel? </string>
+    <string name="question10">10. Do you want to be engaged in this adventure? </string>
     <!-- radio Button choices. -->
 
     <string name="Q1R1">Blue</string>
